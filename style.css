@@ -1,0 +1,41 @@
+
+.scene {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  perspective: 900px;
+  margin-top: 40px;
+}
+.peg {
+  position: relative;
+  width: 24px;
+  height: 260px;
+  background: linear-gradient(#c9a66b, #8b6f3d);
+  border-radius: 12px;
+  transform-style: preserve-3d;
+}
+.disk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 28px;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+}
+@keyframes shakeWarning {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+@keyframes glowWin {
+  from { box-shadow: 0 0 10px gold; }
+  to { box-shadow: 0 0 30px gold; }
+}
+
+@keyframes diskFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
